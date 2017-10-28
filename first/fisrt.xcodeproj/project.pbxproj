@@ -13,6 +13,7 @@
 		901EA1141FA3D177005B5716 /* libsfml-audio.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 901EA10F1FA3D177005B5716 /* libsfml-audio.2.4.2.dylib */; };
 		901EA1151FA3D177005B5716 /* libsfml-system.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 901EA1101FA3D177005B5716 /* libsfml-system.2.4.2.dylib */; };
 		901EA1161FA3D177005B5716 /* libsfml-network.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 901EA1111FA3D177005B5716 /* libsfml-network.2.4.2.dylib */; };
+		90E17A721FA4FC9000B13887 /* classes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90E17A701FA4FC9000B13887 /* classes.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,8 @@
 		901EA10F1FA3D177005B5716 /* libsfml-audio.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.2.dylib"; path = "ExternalLibraries/SFML/lib/libsfml-audio.2.4.2.dylib"; sourceTree = "<group>"; };
 		901EA1101FA3D177005B5716 /* libsfml-system.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.2.dylib"; path = "ExternalLibraries/SFML/lib/libsfml-system.2.4.2.dylib"; sourceTree = "<group>"; };
 		901EA1111FA3D177005B5716 /* libsfml-network.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-network.2.4.2.dylib"; path = "ExternalLibraries/SFML/lib/libsfml-network.2.4.2.dylib"; sourceTree = "<group>"; };
+		90E17A701FA4FC9000B13887 /* classes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = classes.cpp; sourceTree = "<group>"; };
+		90E17A711FA4FC9000B13887 /* classes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = classes.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				901EA1051FA3CFAD005B5716 /* main.cpp */,
+				90E17A701FA4FC9000B13887 /* classes.cpp */,
+				90E17A711FA4FC9000B13887 /* classes.hpp */,
 			);
 			path = fisrt;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E17A721FA4FC9000B13887 /* classes.cpp in Sources */,
 				901EA1061FA3CFAD005B5716 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
