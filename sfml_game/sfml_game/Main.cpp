@@ -70,27 +70,27 @@ int main()
 					continue;	
 			}//проходимся по эл-там списка
 		
-			if ((*it)->getRect().intersects(p.getRect()))//если прямоугольник спрайта объекта пересекается с игроком
-			{
-//				printf("first OK\n"); //выводится
-				if ((*it)->GetName() == "enemy") {//и при этом имя объекта EasyEnemy,то..
-					printf("second OK\n"); // не выводится
-					p.GetHit(10);
-					
-				}
-				if ((*it)->GetName() == "gun") {
-					(*it)->Append(&p);
-					//it=interObjects.erase(it);
-					
-					p.setGun(*it);
-				}
-				if ((*it)->GetName() == "bullet")
-				{
-					printf("Bullet\n");
-					it = interObjects.erase(it);
-					continue;
-				}
-			}
+//			if ((*it)->getRect().intersects(p.getRect()))//если прямоугольник спрайта объекта пересекается с игроком
+//			{
+////				printf("first OK\n"); //выводится
+//				if ((*it)->GetName() == "enemy") {//и при этом имя объекта EasyEnemy,то..
+//					printf("second OK\n"); // не выводится
+//					p.GetHit(10);
+//					
+//				}
+//				if ((*it)->GetName() == "gun") {
+//					(*it)->Append(&p);
+//					//it=interObjects.erase(it);
+//					
+//					p.setGun(*it);
+//				}
+//				if ((*it)->GetName() == "bullet")
+//				{
+//					printf("Bullet\n");
+//					it = interObjects.erase(it);
+//					continue;
+//				}
+//			}
 			it++;
 		}
 																				
@@ -102,6 +102,10 @@ int main()
 		window.clear(Color::White);
 
 		lvl.Draw(window);
+		if (p.hGun())
+		{
+			window.draw(p.Dgun()); 
+		}
 		window.draw(p.GetS());
 		for (it = interObjects.begin(); it != interObjects.end(); it++) {
 			window.draw((*it)->GetS()); //рисуем entities объекты (сейчас это только враги)

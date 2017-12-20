@@ -8,38 +8,59 @@ class Player : public interObj
 	int Skill = 1;
 	Level l;
 	enum { left, right, up, down, jump, stay, shoot } state;
-	interObj *uG;
+	std::vector<interObj*> uG;
+	int gun_n = 0;
 	int dir = 1;
 public:
 	Player(String P, String Name, Level &lev, int W, int H, float X, float Y, int Health, int Sk) : interObj(P, Name, W, H, X, Y)
 	{
-		uG = NULL;
 		HP = Health;
 		Skill = Sk;
 		obj = lev.GetAllObjects();
 		l = lev;
 	}
-	void Append(interObj *pl)
+	Sprite Draw(float x, float y)
 	{
-		return;
+		return sprite;
 	}
 	void Update(float time);
 	void Interrupt();
 	void Collision(float Dx, float Dy);
 	void Control();
-	void Shoot(Level &lev, int dir)
+	Sprite Dgun()
+	{
+
+			return uG[gun_n]->GetS();
+	}
+	void Shoot(Level &lev, int dir,int x,int y)
 	{
 		return;
-	}
+	};
 	void GetHit(int HPL) {
 		HP -= 10;
 		std::cout << HP;
 	};
-	void setGun(interObj *m)
+	bool hGun()
 	{
-		uG = m;
-		m->Append(this);
+		if( uG.size() > 0)
+			return true;
+		else
+			return false;
 	}
+	bool setGun(interObj *m)
+	{
+		
+		uG.push_back(m);
+
+		if (uG.size() == 1)
+		{
+			return true;
+		}
+		else {
+			return false;
+		}
+	};
+
 };
 
 void Player::Update(float time)
@@ -52,7 +73,7 @@ void Player::Update(float time)
 	case up: break;
 	case down: dx = 0; break;
 	case stay: break;
-	case shoot: if(uG!=NULL)uG->Shoot(l,dir);
+	case shoot: if (uG.size() != 0)uG[gun_n]->Shoot(l, dir, x, x + w);
 	}
 	x += dx * time;  //rect.left - координата х
 	Collision(dx, 0);   //обработка столкновений по х
@@ -71,10 +92,10 @@ void Player::Update(float time)
 	if (dx<0) sprite.setTextureRect(IntRect(40 * int(currentFrame) + 40, 0, -40, 60));
 
 	sprite.setPosition(x, y);
-	/*if (uG != NULL)
+	if (uG.size() != 0)
 	{
-		uG->Draw(x, y);
-	}*/
+		uG[gun_n]->Draw(x, y);
+	}
 	GetPlayerCoordianteForView(x, y);
 
 	state = stay;
@@ -126,6 +147,15 @@ void Player::Interrupt()
 				i = interObjects.erase(i);
 				continue;
 			}
+			if ((*i)->GetName() == "gun") {
+				bool res = false;
+				//it=interObjects.erase(it);
+
+				res=setGun(*i);
+				i = interObjects.erase(i);
+				continue;
+
+			}
 
 
 		}
@@ -167,6 +197,7 @@ class Enemy : public interObj
 	int level = 0;
 	int moveTimer;
 public:
+	~Enemy();
 	Enemy(String P, String Name, Level &lev, int W, int H, float X, float Y) : interObj(P, Name, W, H, X, Y) {
 		dx = 0.1; moveTimer = 0;
 		dy = 0;
@@ -177,16 +208,16 @@ public:
 		HP -= 10;
 		std::cout << HP;
 	};
-	void Shoot(Level &lev, int dir)
+	void Shoot(Level &lev, int dir,int x,int y)
 	{
 		return;
 	}
 	void Update(float time);
 	void Collision(float Dx, float Dy);
 	void Interrupt();
-	void Append(interObj *pl)
+	Sprite Draw(float x, float y)
 	{
-		return;
+		return sprite;
 	}
 
 };
@@ -224,6 +255,7 @@ void Enemy::Interrupt()
 				HP -= 10;
 				if (HP <= 0)
 				{
+					onLevel = false;
 					std::cout << "GameOver\n";
 				}
 				i = interObjects.erase(i);

@@ -84,17 +84,22 @@ class Bullet : public ActiveItem
 {
 	int speed;
 	int dir;
+	
+	int st_pos = 0;
+	int range = 0;
 public:
-	Bullet(String p, String name, Level &lev, int W, int H, float X, float Y, interObj * par,int spd,int direct) :ActiveItem(p, name, lev, W, H, X, Y, par)
+	Bullet(String p, String name, Level &lev, int W, int H, float X, float Y, interObj * par,int spd,int direct,int rg) :ActiveItem(p, name, lev, W, H, X, Y, par)
 	{
+		range = rg;
 		dir = direct;
 		speed = spd;
+		st_pos = x;
 	}
 	~Bullet()
 	{}
-	void Append(interObj *pl)
+	Sprite Draw(float x,float y)
 	{
-		return;
+		return sprite;
 	}
 	void Collision(float Dx, float Dy)
 	{
@@ -132,6 +137,16 @@ public:
 	}
 	void Update(float time)
 	{
+		if(dir==1)
+			if (x > range + st_pos)
+			{
+				onLevel = false;
+			}
+		if(dir==0)
+		{
+			if (x < st_pos - range)
+				onLevel = false;
+		}
 		switch (dir)
 		{
 		case 0: dx = -speed; dy = 0;   break;//интовое значение state = left
@@ -158,35 +173,58 @@ public:
 
 		sprite.setPosition(x , y );//задается позицию пуле
 	}
-	void Shoot(Level &lev, int dir) { return; }
+	void Shoot(Level &lev, int dir,int x,int y) { return; }
 };
 
 
 class Gun :public ActiveItem
 {
 //	Bullet *obj;
-public:
-	Gun(String p, String name, Level &lev, int W, int H, float X, float Y,  interObj * par) :ActiveItem(p, name, lev, W, H, X, Y, par)
-	{}
-	void Append(interObj *pl)
-	{
-		owner = pl;
-		weared = true;
-	}
-	void Draw(float x, float y)
-	{
 
+public:
+	Gun(String p, String name, Level &lev, int W, int H, float X, float Y, interObj * par) :ActiveItem(p, name, lev, W, H, X, Y, par)
+	{};
+	void Update(float time) ;
+	Sprite Draw(float xg, float yg)
+	{
+		x = xg;  //rect.left - êîîðäèíàòà õ
+		y = yg;   //rect.top  - êîîðäèíàòà y
 		sprite.setPosition(x, y);
+		return sprite;
 	}
-	void Shoot(Level &lev,int dir)
+	void Shoot(Level &lev,int dir,int left,int right)
 	{
 		if(dir==1)
-			interObjects.push_back(new Bullet("bullet.png", "bullet", lev, 16, 16, x+30, y, this, 2,dir));
+			interObjects.push_back(new Bullet("fire.png", "bullet", lev, 43, 26, right+1, y, this, 1,dir,50));
 		else
-			interObjects.push_back(new Bullet("bullet.png", "bullet", lev, 16, 16, x - 30, y, this, 2, dir));
+			interObjects.push_back(new Bullet("fire.png", "bullet", lev,43, 26, left-43, y, this, 1, dir,50));
 	}
 	void Interrupt()
 	{
 		return;
 	}
 };
+
+void Gun::Update(float time)
+{
+	if (owner == NULL)
+	{
+		x = x;
+		y = y;
+		sprite.setPosition(x, y);
+	}
+	else
+	{
+		x = owner->GetX();  //rect.left - êîîðäèíàòà õ
+		y = owner->GetY();   //rect.top  - êîîðäèíàòà y
+		onGround = false;
+
+
+		//if (dx > 0) sprite.setTextureRect(IntRect(40 * int(currentFrame), 0, 40, 60));
+		//if (dx < 0) sprite.setTextureRect(IntRect(40 * int(currentFrame) + 40, 0, -40, 60));
+
+
+		sprite.setPosition(x, y);
+		//GetPlayerCoordianteForView(x, y);
+	}
+}
