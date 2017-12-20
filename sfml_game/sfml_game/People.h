@@ -1,35 +1,45 @@
-#include "interObj.h"
+п»ї#include "interObj.h"
 
+extern std::list<interObj*>  interObjects;
 
 class Player : public interObj
 {
 	int HP = 100;
 	int Skill = 1;
-	enum { left, right, up, down, jump, stay } state;
-	//Gun *uG;
+	Level l;
+	enum { left, right, up, down, jump, stay, shoot } state;
+	interObj *uG;
+	int dir = 1;
 public:
 	Player(String P, String Name, Level &lev, int W, int H, float X, float Y, int Health, int Sk) : interObj(P, Name, W, H, X, Y)
 	{
-//		uG = NULL;
+		uG = NULL;
 		HP = Health;
 		Skill = Sk;
 		obj = lev.GetAllObjects();
+		l = lev;
 	}
 	void Append(interObj *pl)
 	{
 		return;
 	}
 	void Update(float time);
+	void Interrupt();
 	void Collision(float Dx, float Dy);
 	void Control();
+	void Shoot(Level &lev, int dir)
+	{
+		return;
+	}
 	void GetHit(int HPL) {
 		HP -= 10;
 		std::cout << HP;
 	};
-	//void setGun(Gun *m)
-	//{
-	//	uG = m;
-	//}
+	void setGun(interObj *m)
+	{
+		uG = m;
+		m->Append(this);
+	}
 };
 
 void Player::Update(float time)
@@ -37,20 +47,22 @@ void Player::Update(float time)
 	Control();
 	switch (state)
 	{
-	case right:dx = speed; break;
-	case left:dx = -speed; break;
+	case right:dx = speed; dir = 1; break;
+	case left:dx = -speed; dir = 0; break;
 	case up: break;
 	case down: dx = 0; break;
 	case stay: break;
+	case shoot: if(uG!=NULL)uG->Shoot(l,dir);
 	}
-	x += dx * time;  //rect.left - координата х
-	Collision(dx, 0);   //обработка столкновений по х
+	x += dx * time;  //rect.left - РєРѕРѕСЂРґРёРЅР°С‚Р° С…
+	Collision(dx, 0);   //РѕР±СЂР°Р±РѕС‚РєР° СЃС‚РѕР»РєРЅРѕРІРµРЅРёР№ РїРѕ С…
 
 	if (!onGround) dy = dy + 0.0005*time;
-	y += dy*time;   //rect.top  - координата y
+	y += dy*time;   //rect.top  - РєРѕРѕСЂРґРёРЅР°С‚Р° y
 	onGround = false;
-	Collision(0, dy); //обработка столкновений по у
-
+	Collision(0, dy);
+	Interrupt(); //РѕР±СЂР°Р±РѕС‚РєР° СЃС‚РѕР»РєРЅРѕРІРµРЅРёР№ РїРѕ Сѓ
+	
 
 	currentFrame += 0.008*time;
 	if (currentFrame > 4) currentFrame -= 4;
@@ -66,15 +78,15 @@ void Player::Update(float time)
 	GetPlayerCoordianteForView(x, y);
 
 	state = stay;
-	dx = 0; //для остановки персонажа
+	dx = 0; //РґР»СЏ РѕСЃС‚Р°РЅРѕРІРєРё РїРµСЂСЃРѕРЅР°Р¶Р°
 }
 void Player::Collision(float Dx, float Dy)
 {
 
-	for (int i = 0; i<obj.size(); i++)//проходимся по объектам
-		if (getRect().intersects(obj[i].rect))//проверяем пересечение игрока с объектом
+	for (int i = 0; i<obj.size(); i++)//ГЇГ°Г®ГµГ®Г¤ГЁГ¬Г±Гї ГЇГ® Г®ГЎГєГҐГЄГІГ Г¬
+		if (getRect().intersects(obj[i].rect))//ГЇГ°Г®ГўГҐГ°ГїГҐГ¬ ГЇГҐГ°ГҐГ±ГҐГ·ГҐГ­ГЁГҐ ГЁГЈГ°Г®ГЄГ  Г± Г®ГЎГєГҐГЄГІГ®Г¬
 		{
-			if (obj[i].name == "solid")//если встретили препятствие
+			if (obj[i].name == "solid")//ГҐГ±Г«ГЁ ГўГ±ГІГ°ГҐГІГЁГ«ГЁ ГЇГ°ГҐГЇГїГІГ±ГІГўГЁГҐ
 			{
 				if (Dy>0) { y = obj[i].rect.top - h;  dy = 0; onGround = true; }
 				if (Dy<0) { y = obj[i].rect.top + obj[i].rect.height;   dy = 0; }
@@ -85,6 +97,42 @@ void Player::Collision(float Dx, float Dy)
 
 		}
 }
+void Player::Interrupt()
+{
+	String name;
+	for (std::list<interObj*>::iterator i = interObjects.begin(); i != interObjects.end(); ) {//РїСЂРѕС…РѕРґРёРјСЃСЏ РїРѕ РѕР±СЉРµРєС‚Р°Рј
+		name = (*i)->GetName();
+		if (getRect().intersects((*i)->getRect()))//РїСЂРѕРІРµСЂСЏРµРј РїРµСЂРµСЃРµС‡РµРЅРёРµ РёРіСЂРѕРєР° СЃ РѕР±СЉРµРєС‚РѕРј
+		{
+			if ((*i)->GetName() == "solid")//РµСЃР»Рё РІСЃС‚СЂРµС‚РёР»Рё РїСЂРµРїСЏС‚СЃС‚РІРёРµ
+			{
+				if (dy > 0) { 
+					y = (*i)->getRect().top - h;  dy = 0; onGround = true; }
+				if (dy < 0) {
+					y = (*i)->getRect().top + (*i)->getRect().height;   dy = 0; }
+				if (dx > 0) { 
+					x = (*i)->getRect().left - w; dx = -dx; }
+				if (dx < 0) { 
+					x = (*i)->getRect().left + (*i)->getRect().width; dx = -dx; }
+			}
+			
+			if ((*i)->GetName() == "bullet")
+			{
+				HP -= 10;
+				if (HP <= 0)
+				{
+					std::cout << "GameOver\n";
+				}
+				i = interObjects.erase(i);
+				continue;
+			}
+
+
+		}
+		i++;
+	}
+}
+
 void Player::Control() {
 
 	if (Keyboard::isKeyPressed(Keyboard::Left)) {
@@ -103,7 +151,10 @@ void Player::Control() {
 		state = jump;
 		dy = -0.35; onGround = false;
 	}
+	if ((Keyboard::isKeyPressed(Keyboard::Space))) {
+		state = shoot;
 
+	}
 	/*if (Keyboard::isKeyPressed(Keyboard::Down)) {
 	state = down;
 	}*/
@@ -112,6 +163,8 @@ void Player::Control() {
 
 class Enemy : public interObj
 {
+	int HP = 100;
+	int level = 0;
 	int moveTimer;
 public:
 	Enemy(String P, String Name, Level &lev, int W, int H, float X, float Y) : interObj(P, Name, W, H, X, Y) {
@@ -120,8 +173,17 @@ public:
 		obj = lev.GetAllObjects();
 		sprite.setTextureRect(IntRect(40 * 4, 0, 40, 60));
 	}
+	void GetHit(int HPL) {
+		HP -= 10;
+		std::cout << HP;
+	};
+	void Shoot(Level &lev, int dir)
+	{
+		return;
+	}
 	void Update(float time);
 	void Collision(float Dx, float Dy);
+	void Interrupt();
 	void Append(interObj *pl)
 	{
 		return;
@@ -130,14 +192,14 @@ public:
 };
 void Enemy::Update(float time)
 {
-	x += dx * time;  //rect.left - координата х
-	Collision(dx, 0);   //обработка столкновений по х
+	x += dx * time;  //rect.left - ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ  Гµ
+	Collision(dx, 0);   //Г®ГЎГ°Г ГЎГ®ГІГЄГ  Г±ГІГ®Г«ГЄГ­Г®ГўГҐГ­ГЁГ© ГЇГ® Гµ
 
 	if (!onGround) dy = dy + 0.0005*time;
-	y += dy*time;   //rect.top  - координата y
+	y += dy*time;   //rect.top  - ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ  y
 	onGround = false;
-	Collision(0, dy); //обработка столкновений по у
-
+	Collision(0, dy); //Г®ГЎГ°Г ГЎГ®ГІГЄГ  Г±ГІГ®Г«ГЄГ­Г®ГўГҐГ­ГЁГ© ГЇГ® Гі
+	Interrupt();
 
 	currentFrame += 0.008*time;
 	if (currentFrame > 8) currentFrame -= 4;
@@ -149,12 +211,37 @@ void Enemy::Update(float time)
 	sprite.setPosition(x, y);
 	//GetPlayerCoordianteForView(x, y);
 }
+void Enemy::Interrupt()
+{
+	String name;
+	for (std::list<interObj*>::iterator i = interObjects.begin(); i != interObjects.end(); ) {//РїСЂРѕС…РѕРґРёРјСЃСЏ РїРѕ РѕР±СЉРµРєС‚Р°Рј
+		name = (*i)->GetName();
+		if (getRect().intersects((*i)->getRect()))//РїСЂРѕРІРµСЂСЏРµРј РїРµСЂРµСЃРµС‡РµРЅРёРµ РёРіСЂРѕРєР° СЃ РѕР±СЉРµРєС‚РѕРј
+		{
+
+			if ((*i)->GetName() == "bullet")
+			{
+				HP -= 10;
+				if (HP <= 0)
+				{
+					std::cout << "GameOver\n";
+				}
+				i = interObjects.erase(i);
+				continue;
+			}
+
+
+
+		}
+		i++;
+	}
+}
 void Enemy::Collision(float Dx, float Dy)
 {
-	for (int i = 0; i<obj.size(); i++)//проходимся по объектам
-		if (getRect().intersects(obj[i].rect))//проверяем пересечение игрока с объектом
+	for (int i = 0; i<obj.size(); i++)//ГЇГ°Г®ГµГ®Г¤ГЁГ¬Г±Гї ГЇГ® Г®ГЎГєГҐГЄГІГ Г¬
+		if (getRect().intersects(obj[i].rect))//ГЇГ°Г®ГўГҐГ°ГїГҐГ¬ ГЇГҐГ°ГҐГ±ГҐГ·ГҐГ­ГЁГҐ ГЁГЈГ°Г®ГЄГ  Г± Г®ГЎГєГҐГЄГІГ®Г¬
 		{
-			if (obj[i].name == "solid")//если встретили препятствие
+			if (obj[i].name == "solid")//ГҐГ±Г«ГЁ ГўГ±ГІГ°ГҐГІГЁГ«ГЁ ГЇГ°ГҐГЇГїГІГ±ГІГўГЁГҐ
 			{
 				if (Dy>0) { y = obj[i].rect.top - h;  dy = 0; onGround = true; }
 				if (Dy<0) { y = obj[i].rect.top + obj[i].rect.height;   dy = 0; }

@@ -1,5 +1,13 @@
-#pragma once
+п»ї#pragma once
 #include "level.h"
+#include <list>  
+
+
+
+
+
+
+
 
 class interObj
 {
@@ -14,11 +22,13 @@ protected:
 	Texture text;
 	Sprite sprite;
 	float currentFrame;
-	std::vector<Object> obj;//вектор объектов карты
+	bool onLevel;
+	std::vector<Object> obj;//РІРµРєС‚РѕСЂ РѕР±СЉРµРєС‚РѕРІ РєР°СЂС‚С‹
 public:
 	interObj(String p, String Name, int W, int H, float X, float Y)
 	{
 		path = p;
+		onLevel = true;
 		img.loadFromFile(path);
 		text.loadFromImage(img);
 		sprite.setTexture(text);
@@ -34,13 +44,12 @@ public:
 		currentFrame = 0;
 		speed = 0;
 	};
-	
 	FloatRect getRect()
 	{
 		return FloatRect(x, y, w, h);
 	}
 
-
+	virtual void Shoot(Level &lev, int dir) =0;
 	virtual void Update(float time) = 0;
 	virtual void Append(interObj *pl) = 0;
 	float GetX() {
@@ -61,6 +70,11 @@ public:
 	{
 		return sprite;
 	}
+	bool GetState()
+	{
+		return onLevel;
+	}
 
 };
 
+std::list<interObj*>  interObjects;

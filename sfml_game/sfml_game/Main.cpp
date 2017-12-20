@@ -10,16 +10,16 @@
 #include "Item.h"
 #include "People.h"
 
-
+extern std::list<interObj*>  interObjects;
 using namespace sf;
 
 
 int main()
 {
 	RenderWindow window(VideoMode(800, 600), "Test!"); 
-	std::list<interObj*>  interObjects;//создаю список, сюда буду кидать объекты.например врагов.
+//создаю список, сюда буду кидать объекты.например врагов.
 	std::list<interObj*>::iterator it;//итератор чтобы проходить по эл-там списка
-	
+
 	Level lvl;//создали экземпл€р класса уровень
 	lvl.LoadFromFile("map3.tmx");//загрузили в него карту, внутри класса с помощью методов он ее обработает.
 
@@ -62,12 +62,17 @@ int main()
 
 		p.Update(time);
 		for (it = interObjects.begin(); it != interObjects.end(); ) { 
-			(*it)->Update(time); //дл€ всех элементов списка(пока это только враги,но могут быть и пули к примеру) активируем ф-цию update
-														//проходимс€ по эл-там списка
+			if((*it)->GetState())
+				(*it)->Update(time); //дл€ всех элементов списка(пока это только враги,но могут быть и пули к примеру) активируем ф-цию update
+			else
+			{
+					it = interObjects.erase(it);
+					continue;	
+			}//проходимс€ по эл-там списка
 		
 			if ((*it)->getRect().intersects(p.getRect()))//если пр€моугольник спрайта объекта пересекаетс€ с игроком
 			{
-				printf("first OK\n"); //выводитс€
+//				printf("first OK\n"); //выводитс€
 				if ((*it)->GetName() == "enemy") {//и при этом им€ объекта EasyEnemy,то..
 					printf("second OK\n"); // не выводитс€
 					p.GetHit(10);
@@ -76,8 +81,14 @@ int main()
 				if ((*it)->GetName() == "gun") {
 					(*it)->Append(&p);
 					//it=interObjects.erase(it);
-					printf("Gun");
-//					p.setGun(*it);
+					
+					p.setGun(*it);
+				}
+				if ((*it)->GetName() == "bullet")
+				{
+					printf("Bullet\n");
+					it = interObjects.erase(it);
+					continue;
 				}
 			}
 			it++;
