@@ -1,5 +1,6 @@
 #pragma once
-void menu(RenderWindow & window) {
+bool menu(RenderWindow & window) {
+	window.clear();
 	Texture menuTexture1, menuTexture2, menuTexture3, aboutTexture, menuBackground;
 	menuTexture1.loadFromFile("images/111.png");
 	menuTexture2.loadFromFile("images/222.png");
@@ -31,9 +32,9 @@ void menu(RenderWindow & window) {
 
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
-			if (menuNum == 1) isMenu = false;//если нажали первую кнопку, то выходим из меню 
-			if (menuNum == 2) { window.draw(about); window.display(); while (!Keyboard::isKeyPressed(Keyboard::Escape)); }
-			if (menuNum == 3) { window.close(); isMenu = false; }
+			if (menuNum == 1) { isMenu = false; return true; }//если нажали первую кнопку, то выходим из меню 
+			if (menuNum == 2) { window.draw(about); window.display(); while (!Keyboard::isKeyPressed(Keyboard::Escape));  }
+			if (menuNum == 3) { window.close(); isMenu = false; return false; }
 
 		}
 
