@@ -6,7 +6,7 @@ View GetPlayerCoordianteForView(float x, float y) //ф-ия считывания координат иг
 {
 	float TempX = x, TempY = y;
 	if (x < 200) TempX = 200;
-	//if (x > 1100) TempX = 1100; // обработать позже, поскольку карта будет расширяться
+	if (x > 3630) TempX = 3630; // обработать позже, поскольку карта будет расширяться
 	if (y < 160) TempY = 160;
 	if (y > 650) TempY = 650;
 
