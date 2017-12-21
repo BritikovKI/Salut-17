@@ -1,10 +1,12 @@
 #pragma once
+#pragma once
 #include <string>
 #include <vector>
 #include <map>
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "TinyXML/tinyxml.h"
+#include "TinyXML\tinyxml.h"
+#include "level.h"
 
 struct Object
 {

@@ -7,17 +7,16 @@
 #include <list>
 #include "TinyXML/tinyxml.h"
 #include "level.h"
-#include "Item.h"
-#include "People.h"
-extern std::vector<Object> obj;
-extern std::list<interObj*>  interObjects;
+
+
+
 using namespace sf;
 
 
 int main()
 {
-	RenderWindow window(VideoMode(1600, 1200), "Test!"); 
-//создаю список, сюда буду кидать объекты.например врагов.
+	RenderWindow window(VideoMode(800, 600), "Test!");
+	std::list<interObj*>  interObjects;//создаю список, сюда буду кидать объекты.например врагов.
 	std::list<interObj*>::iterator it;//итератор чтобы проходить по эл-там списка
 
 	Level lvl;//создали экземпл€р класса уровень
@@ -26,17 +25,13 @@ int main()
 
 	Object player = lvl.GetObject("player");//объект игрока на нашей карте.задаем координаты игроку в начале при помощи него
 	std::vector<Object> enemies = lvl.GetObjects("enemy");//все объекты врага на tmx карте хран€тс€ в этом векторе
-	std::vector<Object> aItems = lvl.GetObjects("aItem");//все объекты item на tmx карте хран€тс€ в этом векторе
+
 
 	for (int i = 0; i < enemies.size(); i++)//проходимс€ по элементам этого вектора(а именно по врагам)
-		interObjects.push_back(new Enemy("one_more_sprite.png", "enemy", lvl,  40, 60, enemies[i].rect.left, enemies[i].rect.top));//и закидываем в список всех наших врагов с карты
+		interObjects.push_back(new Enemy("one_more_sprite.png", "enemy", lvl, 40, 60, enemies[i].rect.left, enemies[i].rect.top));//и закидываем в список всех наших врагов с карты
 
-	for (int i = 0; i < aItems.size(); i++)//проходимс€ по элементам этого вектора(а именно по врагам)
-		interObjects.push_back(new Gun("weapon_sprites_by_im_not_crying.png", "gun", lvl, 64, 30, aItems[i].rect.left, aItems[i].rect.top,NULL,198,5,50));//и закидываем в список всех наших врагов с карты
+	Player p("one_more_sprite.png", "Player1", lvl, 40, 60, player.rect.left, player.rect.top);
 
-
-	Player p("one_more_sprite.png", "Player1", lvl, 40, 60, player.rect.left, player.rect.top,100,1);
-	
 
 
 	Clock clock;
@@ -61,39 +56,9 @@ int main()
 
 
 		p.Update(time);
-		for (it = interObjects.begin(); it != interObjects.end(); ) { 
-			if((*it)->GetState())
-				(*it)->Update(time); //дл€ всех элементов списка(пока это только враги,но могут быть и пули к примеру) активируем ф-цию update
-			else
-			{
-					it = interObjects.erase(it);
-					continue;	
-			}//проходимс€ по эл-там списка
-		
-//			if ((*it)->getRect().intersects(p.getRect()))//если пр€моугольник спрайта объекта пересекаетс€ с игроком
-//			{
-////				printf("first OK\n"); //выводитс€
-//				if ((*it)->GetName() == "enemy") {//и при этом им€ объекта EasyEnemy,то..
-//					printf("second OK\n"); // не выводитс€
-//					p.GetHit(10);
-//					
-//				}
-//				if ((*it)->GetName() == "gun") {
-//					(*it)->Append(&p);
-//					//it=interObjects.erase(it);
-//					
-//					p.setGun(*it);
-//				}
-//				if ((*it)->GetName() == "bullet")
-//				{
-//					printf("Bullet\n");
-//					it = interObjects.erase(it);
-//					continue;
-//				}
-//			}
-			it++;
-		}
-																				
+		for (it = interObjects.begin(); it != interObjects.end(); it++) { (*it)->Update(time); }//дл€ всех элементов списка(пока это только враги,но могут быть и пули к примеру) активируем ф-цию update
+
+
 
 		window.setView(view); //ожимвл€ем камеру
 
@@ -102,16 +67,10 @@ int main()
 		window.clear(Color::White);
 
 		lvl.Draw(window);
-		if (p.hGun())
-		{
-			window.draw(p.Dgun()); 
-		}
 		window.draw(p.GetS());
 		for (it = interObjects.begin(); it != interObjects.end(); it++) {
 			window.draw((*it)->GetS()); //рисуем entities объекты (сейчас это только враги)
 		}
-
-		
 		window.display();
 	}
 

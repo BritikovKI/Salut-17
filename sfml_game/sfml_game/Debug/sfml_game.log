@@ -1,44 +1,133 @@
 ﻿  Main.cpp
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(58): warning C4244: return: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(143): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(144): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(184): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(241): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(262): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(263): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(264): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(265): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(308): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(317): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(339): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(340): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\interobj.h(51): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(72): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(100): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(110): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(156): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(157): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(158): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(159): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(160): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(161): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(220): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(225): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(74): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(81): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(99): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(104): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(126): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(191): warning C4305: =: усечение из "double" в "float"
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(196): warning C4305: =: усечение из "double" в "float"
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(203): warning C4305: =: усечение из "double" в "float"
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(223): warning C4305: =: усечение из "double" в "float"
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(250): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(256): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(294): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\main.cpp(31): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\main.cpp(34): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\main.cpp(48): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(311): warning C4715: Level::GetObject: значение возвращается не при всех путях выполнения
-  sfml_game.vcxproj -> C:\Users\Chapay\Downloads\pr\sfml_game\Debug\sfml_game.exe
-  sfml_game.vcxproj -> C:\Users\Chapay\Downloads\pr\sfml_game\Debug\sfml_game.pdb (Partial PDB)
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(60): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(145): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(146): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(186): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(243): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(264): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(265): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(266): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(267): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(310): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(319): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(341): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\chapay\downloads\sfml_game\sfml_game\level.h(342): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(7): error C3646: name: неизвестный спецификатор переопределения
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(7): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(12): error C3646: path: неизвестный спецификатор переопределения
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(12): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(13): error C3646: img: неизвестный спецификатор переопределения
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(14): error C3646: text: неизвестный спецификатор переопределения
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(14): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(15): error C3646: sprite: неизвестный спецификатор переопределения
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(15): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(19): error C2061: синтаксическая ошибка: идентификатор "String"
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(37): error C3646: getRect: неизвестный спецификатор переопределения
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(37): error C2059: синтаксическая ошибка: (
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(38): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(46): error C3646: GetS: неизвестный спецификатор переопределения
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(46): error C2059: синтаксическая ошибка: (
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(47): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(21): error C2065: path: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(21): error C2065: p: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(22): error C2065: img: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(22): error C2228: выражение слева от ".loadFromFile" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(22): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(22): error C2065: path: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(23): error C2065: text: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(23): error C2228: выражение слева от ".loadFromImage" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(23): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(23): error C2065: img: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(24): error C2065: sprite: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(24): error C2228: выражение слева от ".setTexture" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(24): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(24): error C2065: text: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(25): error C2065: sprite: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(25): error C2228: выражение слева от ".setTextureRect" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(25): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(25): error C3861: IntRect: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(28): error C2065: X: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(29): error C2065: Y: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(30): error C2065: W: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(31): error C2065: H: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(56): error C2061: синтаксическая ошибка: идентификатор "String"
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(56): error C2065: P: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(56): error C2065: Name: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(56): error C2065: W: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(56): error C2065: H: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(56): error C2065: X: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(56): error C2065: Y: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(58): error C2065: lev: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(58): error C2228: выражение слева от ".GetAllObjects" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(58): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(78): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(84): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(87): error C2065: sprite: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(87): error C2228: выражение слева от ".setTextureRect" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(87): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(87): error C3861: IntRect: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(88): error C2065: sprite: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(88): error C2228: выражение слева от ".setTextureRect" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(88): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(88): error C3861: IntRect: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(91): error C2065: sprite: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(91): error C2228: выражение слева от ".setPosition" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(91): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(92): error C3861: GetPlayerCoordianteForView: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(99): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(100): error C3861: getRect: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(100): error C2228: выражение слева от ".intersects" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(100): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(114): error C2653: Keyboard: не является именем класса или пространства имен
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(114): error C2065: Left: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(114): error C3861: isKeyPressed: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(116): warning C4305: =: усечение из "double" в "float"
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(119): error C2653: Keyboard: не является именем класса или пространства имен
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(119): error C2065: Right: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(119): error C3861: isKeyPressed: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(121): warning C4305: =: усечение из "double" в "float"
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(126): error C2653: Keyboard: не является именем класса или пространства имен
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(126): error C2065: Up: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(126): error C3861: isKeyPressed: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(128): warning C4305: =: усечение из "double" в "float"
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(141): error C2061: синтаксическая ошибка: идентификатор "String"
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(141): error C2065: P: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(141): error C2065: Name: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(141): error C2065: W: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(141): error C2065: H: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(141): error C2065: X: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(141): error C2065: Y: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(142): warning C4305: =: усечение из "double" в "float"
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(144): error C2065: lev: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(144): error C2228: выражение слева от ".GetAllObjects" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(144): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(145): error C2065: sprite: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(145): error C2228: выражение слева от ".setTextureRect" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(145): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(145): error C3861: IntRect: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(157): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(163): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(166): error C2065: sprite: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(166): error C2228: выражение слева от ".setTextureRect" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(166): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(166): error C3861: IntRect: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(167): error C2065: sprite: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(167): error C2228: выражение слева от ".setTextureRect" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(167): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(167): error C3861: IntRect: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(170): error C2065: sprite: необъявленный идентификатор
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(170): error C2228: выражение слева от ".setPosition" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(170): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(175): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(176): error C3861: getRect: идентификатор не найден
+c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(176): error C2228: выражение слева от ".intersects" должно представлять класс, структуру или объединение
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(176): note: тип: unknown-type
+c:\users\chapay\downloads\sfml_game\sfml_game\main.cpp(30): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\chapay\downloads\sfml_game\sfml_game\main.cpp(31): error C2661: Enemy::Enemy: нет перегруженной функции, принимающей 7 аргументов
+c:\users\chapay\downloads\sfml_game\sfml_game\main.cpp(33): error C2661: Player::Player: нет перегруженной функции, принимающей 7 аргументов
+c:\users\chapay\downloads\sfml_game\sfml_game\main.cpp(43): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+c:\users\chapay\downloads\sfml_game\sfml_game\main.cpp(70): error C2039: GetS: не является членом "Player"
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(52): note:  см. объявление "Player"
+c:\users\chapay\downloads\sfml_game\sfml_game\main.cpp(72): error C2039: GetS: не является членом "interObj"
+  c:\users\chapay\downloads\sfml_game\sfml_game\interobj.h(5): note:  см. объявление "interObj"

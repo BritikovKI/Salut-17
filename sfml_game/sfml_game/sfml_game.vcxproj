@@ -75,11 +75,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Chapay\Downloads\SFML-2.4.2\include;D:\Instal\sfml\SFML-2.4.2-windows-vc14-64-bit\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Chapay\Downloads\SFML-2.4.2\include;D:\Instal\sfml\SFML-2.4.2-windows-vc14-32-bit\SFML-2.4.2\include;D:\Instal\sfml\SFML-2.4.2-windows-vc14-64-bit\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_DYNAMIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\Chapay\Downloads\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Chapay\Downloads\SFML-2.4.2\lib;D:\Instal\sfml\SFML-2.4.2-windows-vc14-32-bit\SFML-2.4.2\lib;D:\Instal\sfml\SFML-2.4.2-windows-vc14-64-bit\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -127,20 +127,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="TinyXML\tinystr.cpp" />
-    <ClCompile Include="TinyXML\tinyxml.cpp" />
-    <ClCompile Include="TinyXML\tinyxmlerror.cpp" />
-    <ClCompile Include="TinyXML\tinyxmlparser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Classes.h" />
-    <ClInclude Include="interObj.h" />
+    <ClInclude Include="InterObj.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="level.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="People.h" />
-    <ClInclude Include="TinyXML\tinystr.h" />
-    <ClInclude Include="TinyXML\tinyxml.h" />
     <ClInclude Include="View.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
