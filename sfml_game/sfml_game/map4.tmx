@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="120" height="26" tilewidth="32" tileheight="32" nextobjectid="57">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="120" height="26" tilewidth="32" tileheight="32" nextobjectid="58">
  <tileset firstgid="1" name="ground" tilewidth="32" tileheight="32" tilecount="7" columns="7">
   <image source="ground.png" width="231" height="32"/>
  </tileset>
@@ -3166,6 +3166,6 @@
   <object id="36" name="enemy" x="1940.61" y="700.303" width="40" height="60"/>
   <object id="38" name="aItem" type="gun" x="447.5" y="736.5" width="33" height="32"/>
   <object id="52" name="solid" x="0.5" y="512.5" width="31" height="289"/>
-  <object id="55" name="solid" x="1" y="768.5" width="3800" height="30.5"/>
+  <object id="57" name="solid" x="3808" y="198.5" width="30" height="575"/>
  </objectgroup>
 </map>

@@ -3,7 +3,7 @@
 #include "level.h"
 using namespace sf;
 extern std::list<interObj*>  interObjects;
-
+extern std::vector<Object> obj;
 class Item :public interObj
 {
 protected:
@@ -14,7 +14,7 @@ public:
 
 		owner = par;
 		obj = lev.GetAllObjects();
-		sprite.setTextureRect(IntRect(50 * 4, 0, 50, 30));
+
 	}
 	void Update(float time)
 	{
@@ -84,12 +84,16 @@ class Bullet : public ActiveItem
 {
 	int speed;
 	int dir;
-	
+	int img_x;
+	int img_y;
 	int st_pos = 0;
 	int range = 0;
 public:
-	Bullet(String p, String name, Level &lev, int W, int H, float X, float Y, interObj * par,int spd,int direct,int rg) :ActiveItem(p, name, lev, W, H, X, Y, par)
+	Bullet(String p, String name, Level &lev, int W, int H, float X, float Y, interObj * par,int spd,int direct,int rg,int sx, int sy) :ActiveItem(p, name, lev, W, H, X, Y, par)
 	{
+		img_x = sx;
+		img_y = sy;
+		sprite.setTextureRect(IntRect(sx, sy, W, H));
 		range = rg;
 		dir = direct;
 		speed = spd;
@@ -97,7 +101,7 @@ public:
 	}
 	~Bullet()
 	{}
-	Sprite Draw(float x,float y)
+	Sprite Draw(float x,float y, int dir)
 	{
 		return sprite;
 	}
@@ -180,32 +184,55 @@ public:
 class Gun :public ActiveItem
 {
 //	Bullet *obj;
-
+	int direct;
+	int img_x = 0;
+	int img_y = 0;
+	int range = 0;
 public:
-	Gun(String p, String name, Level &lev, int W, int H, float X, float Y, interObj * par) :ActiveItem(p, name, lev, W, H, X, Y, par)
-	{};
-	void Update(float time) ;
-	Sprite Draw(float xg, float yg)
+	Gun(String p, String name, Level &lev, int W, int H, float X, float Y, interObj * par,int i_x,int i_y,int range) :ActiveItem(p, name, lev, W, H, X, Y, par)
 	{
-		x = xg;  //rect.left - êîîðäèíàòà õ
-		y = yg;   //rect.top  - êîîðäèíàòà y
+		img_x = i_x;
+		img_y = i_y;
+		sprite.setTextureRect(IntRect(i_x, i_y, W, H));
+	};
+	void Update(float time) ;
+	Sprite Draw(float xg, float yg, int dir)
+	{
+		if (direct == 1) {
+			sprite.setTextureRect(IntRect(img_x, img_y, w, h));
+			x = xg ;  //rect.left - êîîðäèíàòà õ
+			y = yg;//rect.top  - êîîðäèíàòà y
+		}
+	else
+	{
+		sprite.setTextureRect(IntRect(img_x + w, img_y, -w, h));
+		x = xg-20;
+		y = yg;
+	}
 		sprite.setPosition(x, y);
 		return sprite;
 	}
 	void Shoot(Level &lev,int dir,int left,int right)
 	{
-		if(dir==1)
-			interObjects.push_back(new Bullet("fire.png", "bullet", lev, 43, 26, right+1, y, this, 1,dir,50));
+		direct = dir;
+		if (dir == 1)
+		{
+			interObjects.push_back(new Bullet("fire.png", "bullet", lev, 20, 10, right + 1, y, this, 1, dir, 50,10,10));
+			
+		}
 		else
-			interObjects.push_back(new Bullet("fire.png", "bullet", lev,43, 26, left-43, y, this, 1, dir,50));
-	}
+		{
+			interObjects.push_back(new Bullet("fire.png", "bullet", lev, 20, 10, left - 20, y, this, 1, dir, 50,10,10));
+			
+		}
+		}
 	void Interrupt()
 	{
 		return;
 	}
 };
 
-void Gun::Update(float time)
+void Gun::Update(float time )
 {
 	if (owner == NULL)
 	{
@@ -220,8 +247,7 @@ void Gun::Update(float time)
 		onGround = false;
 
 
-		//if (dx > 0) sprite.setTextureRect(IntRect(40 * int(currentFrame), 0, 40, 60));
-		//if (dx < 0) sprite.setTextureRect(IntRect(40 * int(currentFrame) + 40, 0, -40, 60));
+
 
 
 		sprite.setPosition(x, y);

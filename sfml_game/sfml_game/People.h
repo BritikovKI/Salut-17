@@ -1,11 +1,13 @@
 ﻿#include "interObj.h"
-
+extern std::vector<Object> obj;
 extern std::list<interObj*>  interObjects;
 
 class Player : public interObj
 {
+	float count_time;
 	int HP = 100;
 	int Skill = 1;
+	bool dang;
 	Level l;
 	enum { left, right, up, down, jump, stay, shoot } state;
 	std::vector<interObj*> uG;
@@ -14,17 +16,21 @@ class Player : public interObj
 public:
 	Player(String P, String Name, Level &lev, int W, int H, float X, float Y, int Health, int Sk) : interObj(P, Name, W, H, X, Y)
 	{
+		count_time = 0;
 		HP = Health;
 		Skill = Sk;
 		obj = lev.GetAllObjects();
 		l = lev;
 	}
-	Sprite Draw(float x, float y)
+
+	Sprite Draw(float x, float y, int dir)
 	{
+		dang = false;
 		return sprite;
 	}
+	void Animation(float time, bool danger);
 	void Update(float time);
-	void Interrupt();
+	void Interrupt(float time);
 	void Collision(float Dx, float Dy);
 	void Control();
 	Sprite Dgun()
@@ -62,7 +68,24 @@ public:
 	};
 
 };
+void Player::Animation(float time, bool danger)
+{
+	if (danger == false) {
+		currentFrame += 0.008*time;
+		if (currentFrame > 4) currentFrame -= 4;
 
+		if (dx>0) sprite.setTextureRect(IntRect(40 * int(currentFrame), 0, 40, 60));
+		if (dx<0) sprite.setTextureRect(IntRect(40 * int(currentFrame) + 40, 0, -40, 60));
+	}
+	else {
+		currentFrame += 0.008*time;
+		if (currentFrame > 8) currentFrame -= 4;
+
+		if (dx>0) sprite.setTextureRect(IntRect(40 * int(currentFrame), 0, 40, 60));
+		if (dx<0) sprite.setTextureRect(IntRect(40 * int(currentFrame) + 40, 0, -40, 60));
+	}
+	
+}
 void Player::Update(float time)
 {
 	Control();
@@ -82,19 +105,15 @@ void Player::Update(float time)
 	y += dy*time;   //rect.top  - координата y
 	onGround = false;
 	Collision(0, dy);
-	Interrupt(); //обработка столкновений по у
-	
+	Interrupt(time); //обработка столкновений по у
 
-	currentFrame += 0.008*time;
-	if (currentFrame > 4) currentFrame -= 4;
 
-	if (dx>0) sprite.setTextureRect(IntRect(40 * int(currentFrame), 0, 40, 60));
-	if (dx<0) sprite.setTextureRect(IntRect(40 * int(currentFrame) + 40, 0, -40, 60));
+	Animation(time, dang);
 
 	sprite.setPosition(x, y);
 	if (uG.size() != 0)
 	{
-		uG[gun_n]->Draw(x, y);
+		uG[gun_n]->Draw(x, y,dir);
 	}
 	GetPlayerCoordianteForView(x, y);
 
@@ -118,24 +137,14 @@ void Player::Collision(float Dx, float Dy)
 
 		}
 }
-void Player::Interrupt()
+void Player::Interrupt(float time)
 {
 	String name;
+	count_time += time;
 	for (std::list<interObj*>::iterator i = interObjects.begin(); i != interObjects.end(); ) {//проходимся по объектам
 		name = (*i)->GetName();
 		if (getRect().intersects((*i)->getRect()))//проверяем пересечение игрока с объектом
 		{
-			if ((*i)->GetName() == "solid")//если встретили препятствие
-			{
-				if (dy > 0) { 
-					y = (*i)->getRect().top - h;  dy = 0; onGround = true; }
-				if (dy < 0) {
-					y = (*i)->getRect().top + (*i)->getRect().height;   dy = 0; }
-				if (dx > 0) { 
-					x = (*i)->getRect().left - w; dx = -dx; }
-				if (dx < 0) { 
-					x = (*i)->getRect().left + (*i)->getRect().width; dx = -dx; }
-			}
 			
 			if ((*i)->GetName() == "bullet")
 			{
@@ -143,9 +152,11 @@ void Player::Interrupt()
 				if (HP <= 0)
 				{
 					std::cout << "GameOver\n";
+					i = interObjects.erase(i);
+					continue;
 				}
-				i = interObjects.erase(i);
-				continue;
+				
+				
 			}
 			if ((*i)->GetName() == "gun") {
 				bool res = false;
@@ -156,11 +167,21 @@ void Player::Interrupt()
 				continue;
 
 			}
+			if ((*i)->GetName() == "enemy" && !dang) {
+				std::cout << "ok" << std::endl;
+				count_time = 0;
+				dang = true;
+			}
 
 
 		}
+		if (count_time > 1500)
+			dang = false;
 		i++;
 	}
+
+	
+	
 }
 
 void Player::Control() {
@@ -215,7 +236,7 @@ public:
 	void Update(float time);
 	void Collision(float Dx, float Dy);
 	void Interrupt();
-	Sprite Draw(float x, float y)
+	Sprite Draw(float x, float y, int dir)
 	{
 		return sprite;
 	}

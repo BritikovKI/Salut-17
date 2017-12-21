@@ -12,29 +12,30 @@ c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(308): warning C4018: <:
 c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(317): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(339): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\chapay\downloads\pr\sfml_game\sfml_game\level.h(340): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\interobj.h(49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\interobj.h(51): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
 c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(72): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(96): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(106): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(152): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(153): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(154): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(155): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(100): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(110): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(156): warning C4244: =: преобразование "int" в "float", возможна потеря данных
 c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(157): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(198): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(200): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(76): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(81): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(88): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(107): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(170): warning C4305: =: усечение из "double" в "float"
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(175): warning C4305: =: усечение из "double" в "float"
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(182): warning C4305: =: усечение из "double" в "float"
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(202): warning C4305: =: усечение из "double" в "float"
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(229): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(235): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
-c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(273): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(158): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(159): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(160): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(161): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(220): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\item.h(225): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(74): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(81): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(99): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(104): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(126): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(191): warning C4305: =: усечение из "double" в "float"
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(196): warning C4305: =: усечение из "double" в "float"
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(203): warning C4305: =: усечение из "double" в "float"
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(223): warning C4305: =: усечение из "double" в "float"
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(250): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(256): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+c:\users\chapay\downloads\pr\sfml_game\sfml_game\people.h(294): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\chapay\downloads\pr\sfml_game\sfml_game\main.cpp(31): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\chapay\downloads\pr\sfml_game\sfml_game\main.cpp(34): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\chapay\downloads\pr\sfml_game\sfml_game\main.cpp(48): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных

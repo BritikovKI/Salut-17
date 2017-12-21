@@ -23,10 +23,12 @@ protected:
 	Sprite sprite;
 	float currentFrame;
 	bool onLevel;
+
 	std::vector<Object> obj;//вектор объектов карты
 public:
 	interObj(String p, String Name, int W, int H, float X, float Y)
 	{
+
 		path = p;
 		onLevel = true;
 		img.loadFromFile(path);
@@ -51,7 +53,8 @@ public:
 
 	virtual void Shoot(Level &lev, int dir,int x,int y) =0;
 	virtual void Update(float time) = 0;
-	virtual Sprite Draw(float x, float y)= 0;
+
+	virtual Sprite Draw(float x, float y,int dir)= 0;
 	float GetX() {
 		return x;
 	}
