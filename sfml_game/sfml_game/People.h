@@ -100,14 +100,14 @@ void Player::Update(float time)
 		dx = -speed; dir = 0; break;
 	case up: break;
 	case change:
-		if (chtimer > 1500) {
+		if (chtimer > 1500 && uG.size()!=NULL) {
 			gun_n = (gun_n + 1) % uG.size();
 			chtimer = 0;
 		} break;
 	case stay: break;
-	case shoot: if (uG.size() != 0) { if (shtimer > uG[gun_n]->time) { uG[gun_n]->Shoot(l, dir, x, x + w); shtimer = 0; }; break; }
-	case shootR:if (uG.size() != 0) { if (shtimer > uG[gun_n]->time) { uG[gun_n]->Shoot(l, dir, x-1, x + w+1); shtimer = 0; }; dx = speed; dir = 1; break; }
-	case shootL:if (uG.size() != 0) { if (shtimer > uG[gun_n]->time) { uG[gun_n]->Shoot(l, dir, x-1, x + w+1); shtimer = 0; }; dx = -speed; dir = 0; break; }
+	case shoot: if (uG.size() != 0) { if (shtimer > uG[gun_n]->GetTime()) { uG[gun_n]->Shoot(l, dir, x, x + w); shtimer = 0; }; break; }
+	case shootR:if (uG.size() != 0) { if (shtimer > uG[gun_n]->GetTime()) { uG[gun_n]->Shoot(l, dir, x-2, x + w+2); shtimer = 0; }; dx = speed; dir = 1; break; }
+	case shootL:if (uG.size() != 0) { if (shtimer > uG[gun_n]->GetTime()) { uG[gun_n]->Shoot(l, dir, x-2, x + w+2); shtimer = 0; }; dx = -speed; dir = 0; break; }
 	}
 	x += dx * time;  //rect.left - координата х
 	Collision(dx, 0);   //обработка столкновений по х
@@ -301,7 +301,7 @@ void Enemy::Interrupt()
 
 			if ((*i)->GetName() == "bullet")
 			{
-				HP -= (*i)->damage;
+				HP -= (*i)->GetDamage();
 				if (HP <= 0)
 				{
 					onLevel = false;

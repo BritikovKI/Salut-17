@@ -1,0 +1,49 @@
+﻿  Main.cpp
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\menu.h(17): warning C4305: аргумент: усечение из "double" в "float"
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(59): warning C4244: return: преобразование "double" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(144): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(145): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(185): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(242): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(263): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(264): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(265): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(266): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(309): warning C4018: <: несоответствие типов со знаком и без знака
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(318): warning C4018: <: несоответствие типов со знаком и без знака
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(340): warning C4018: <: несоответствие типов со знаком и без знака
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(341): warning C4018: <: несоответствие типов со знаком и без знака
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\interobj.h(45): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(55): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(85): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(95): warning C4018: <: несоответствие типов со знаком и без знака
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(142): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(143): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(144): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(145): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(146): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(147): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(227): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\item.h(234): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(86): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(93): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(120): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(126): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(130): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(135): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(156): warning C4018: <: несоответствие типов со знаком и без знака
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(233): warning C4305: =: усечение из "double" в "float"
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(238): warning C4305: =: усечение из "double" в "float"
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(245): warning C4305: =: усечение из "double" в "float"
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(273): warning C4305: =: усечение из "double" в "float"
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(300): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(306): warning C4244: +=: преобразование "double" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\people.h(344): warning C4018: <: несоответствие типов со знаком и без знака
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\main.cpp(49): warning C4018: <: несоответствие типов со знаком и без знака
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\main.cpp(53): warning C4018: <: несоответствие типов со знаком и без знака
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\main.cpp(54): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\main.cpp(68): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\level.h(312): warning C4715: Level::GetObject: значение возвращается не при всех путях выполнения
+d:\instal\sfml\sfml_project\sfml_game\sfml_game\menu.h(62): warning C4715: menu: значение возвращается не при всех путях выполнения
+  sfml_game.vcxproj -> D:\Instal\sfml\sfml_project\sfml_game\Debug\sfml_game.exe
+  sfml_game.vcxproj -> D:\Instal\sfml\sfml_project\sfml_game\Debug\sfml_game.pdb (Partial PDB)

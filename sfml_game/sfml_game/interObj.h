@@ -23,7 +23,8 @@ protected:
 	Sprite sprite;
 	float currentFrame;
 	bool onLevel;
-	
+	int damage = 0;
+	float time = 0;
 	std::vector<Object> obj;//вектор объектов карты
 public:
 	interObj(String p, String Name, int W, int H, float X, float Y)
@@ -61,7 +62,14 @@ public:
 	float GetY() {
 		return y;
 	}
-	float time = 0;
+	int GetDamage()
+	{
+		return damage;
+	}
+	float GetTime()
+	{
+		return time;
+	}
 	float Getdx() {
 		return dx;
 	}
@@ -69,7 +77,7 @@ public:
 	{
 		return name;
 	}
-	int damage = 0;
+	
 	Sprite GetS()
 	{
 		return sprite;

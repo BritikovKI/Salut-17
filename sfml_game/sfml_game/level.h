@@ -74,7 +74,7 @@ bool Level::LoadFromFile(std::string filename)//двоеточия-обращение к методам кл
 		return false;
 	}
 
-	// работаем с контейнером map
+
 	TiXmlElement *map;
 	map = levelFile.FirstChildElement("map");
 
@@ -90,7 +90,7 @@ bool Level::LoadFromFile(std::string filename)//двоеточия-обращение к методам кл
 	tilesetElement = map->FirstChildElement("tileset");
 	firstTileID = atoi(tilesetElement->Attribute("firstgid"));
 
-	// source - путь до картинки в контейнере image
+
 	TiXmlElement *image;
 	//image = tilesetElement->FirstChildElement("source");
 	image = tilesetElement->FirstChildElement("image");
@@ -338,5 +338,5 @@ void Level::Draw(sf::RenderWindow &window)
 	// рисуем все тайлы (объекты не рисуем!)
 	for (int layer = 0; layer < layers.size(); layer++)
 		for (int tile = 0; tile < layers[layer].tiles.size(); tile++)
-			window.draw(layers[layer].tiles[tile]);
+         			window.draw(layers[layer].tiles[tile]);
 }
